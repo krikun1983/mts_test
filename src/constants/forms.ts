@@ -2,4 +2,4 @@ export const isCheckEmail =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const isTitleEmails = `поле email не может быть пустым,
 должен соответствовать стандартному правилу формированию email`;
-export const isTitlePassword = `поле password не может быть меньше шести букв`;
+export const isTitlePassword = `поле password не может быть меньше шести букв и больше 25`;

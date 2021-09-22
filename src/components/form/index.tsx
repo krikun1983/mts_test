@@ -1,12 +1,10 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { isCheckEmail, isTitleEmails, isTitlePassword } from '../../constants/forms';
-import useTypeSelector from '../../store/hooks/useTypeSelector';
 import { adminShowOpen } from '../../store/reducers/adminShowReducer';
 
 const Form = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { isAdminShow } = useTypeSelector(state => state.isAdminShow);
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
