@@ -1,7 +1,12 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { isCheckEmail, isTitleEmails, isTitlePassword } from '../../constants/forms';
+import useTypeSelector from '../../store/hooks/useTypeSelector';
+import { adminShowOpen } from '../../store/reducers/adminShowReducer';
 
 const Form = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const { isAdminShow } = useTypeSelector(state => state.isAdminShow);
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,11 +24,11 @@ const Form = (): JSX.Element => {
     }
   }, [emailError, passwordError]);
 
-  const handlePasswordShow = () => {
+  const handlePasswordShow = (): void => {
     setPasswordShow(!passwordShow);
   };
 
-  const blurHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const blurHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     switch (e.target.name) {
       case 'email':
         setEmailDirty(true);
@@ -58,8 +63,13 @@ const Form = (): JSX.Element => {
     }
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    dispatch(adminShowOpen());
+  };
+
   return (
-    <form className="form" action="">
+    <form className="form" onSubmit={handleSubmit}>
       <label htmlFor="email" className="form__email_label">
         Email: {emailDirty && emailError && <span>{emailError}</span>}
       </label>
@@ -69,8 +79,8 @@ const Form = (): JSX.Element => {
         className={`form__email_input ${!emailError ? 'valid' : ''}`}
         type="email"
         value={email}
-        onBlur={e => blurHandler(e)}
-        onChange={e => emailHandler(e)}
+        onBlur={(e): void => blurHandler(e)}
+        onChange={(e): void => emailHandler(e)}
         title={`${isTitleEmails}`}
         placeholder="Enter your email..."
         required
@@ -89,8 +99,8 @@ const Form = (): JSX.Element => {
         className={`form__password_input ${!passwordError ? 'valid' : ''}`}
         value={password}
         type={`${passwordShow ? 'text' : 'password'}`}
-        onBlur={e => blurHandler(e)}
-        onChange={e => passwordHandler(e)}
+        onBlur={(e): void => blurHandler(e)}
+        onChange={(e): void => passwordHandler(e)}
         title={`${isTitlePassword}`}
         placeholder="Enter your password..."
         required

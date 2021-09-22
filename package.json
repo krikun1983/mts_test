@@ -63,6 +63,7 @@
   "main": "webpack.config.js",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "@types/react-redux": "^7.1.18",
     "history": "^5.0.0",
     "husky": "^7.0.1",
