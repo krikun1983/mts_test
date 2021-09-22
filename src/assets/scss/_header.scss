@@ -11,7 +11,8 @@
 }
 
 .header-container {
-  width: 1200px;
+  position: relative;
+  width: $table;
   height: 100%;
   margin: 0 auto;
   @include flex-between;
@@ -25,6 +26,8 @@
 }
 
 .admin__heading {
+  position: absolute;
+  left: calc((#{$table} - 395px) / 2);
   color: $color-purple-dark;
   font-size: 28px;
 }
@@ -43,6 +46,10 @@
 }
 
 .dropdown {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  z-index: 10;
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -83,7 +90,7 @@
 
 .dropdown-active.dropdown__lines::before {
   top: 0;
-  left: 0;
+  right: 0;
   width: 40px;
   background-color: $color-purple;
   transform: rotate(45deg);
@@ -91,8 +98,70 @@
 
 .dropdown-active.dropdown__lines::after {
   top: 0;
-  left: 0;
+  right: 0;
   width: 40px;
   background-color: $color-purple;
   transform: rotate(-45deg);
+}
+
+.header-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 450px;
+  height: 100vh;
+  margin-right: 0;
+  text-align: center;
+  background-color: $color-turquoise;
+  transform: translateX(450px);
+  transition: transform 0.3s ease-in;
+}
+
+.header-nav-show {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 240px;
+  margin-top: 120px;
+
+  &__item {
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__link {
+    display: inline-block;
+    color: $color-purple-dark;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .output {
+    padding: 15px 30px;
+    color: $color-purple-dark;
+    font-weight: bold;
+    background-color: $color-turquoise;
+    border: 1px solid $color-purple-dark;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  }
+
+  .output:hover {
+    color: $color-white;
+    background: -webkit-linear-gradient(0deg, rgb(234, 59, 240), rgb(98, 215, 221));
+    background: -moz-linear-gradient(0deg, rgb(234, 59, 240), rgb(98, 215, 221));
+    background: linear-gradient(0deg, rgb(234, 59, 240), rgb(98, 215, 221));
+  }
 }
