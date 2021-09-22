@@ -1,21 +1,17 @@
 .header {
+  position: relative;
+  width: 100%;
   height: 100px;
+  padding: 0 40px;
   background-color: rgba(247, 247, 247, 0.5);
   -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  @include flex-between;
 }
 
 .header-show {
   display: none;
-}
-
-.header-container {
-  position: relative;
-  width: $table;
-  height: 100%;
-  margin: 0 auto;
-  @include flex-between;
 }
 
 .logo {
@@ -26,10 +22,10 @@
 }
 
 .admin__heading {
-  position: absolute;
-  left: calc((#{$table} - 395px) / 2);
+  width: 100%;
   color: $color-purple-dark;
   font-size: 28px;
+  text-align: center;
 }
 
 .heading {
@@ -112,12 +108,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 450px;
+  width: 360px;
   height: 100vh;
   margin-right: 0;
   text-align: center;
   background-color: $color-turquoise;
-  transform: translateX(450px);
+  transform: translateX(360px);
   transition: transform 0.3s ease-in;
 }
 
@@ -144,6 +140,10 @@
     color: $color-purple-dark;
     font-weight: bold;
     text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $color-purple;
   }
 
   .output {
