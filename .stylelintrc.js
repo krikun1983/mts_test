@@ -4,6 +4,8 @@ module.exports = {
     "stylelint-prettier/recommended"],
   plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
-    // Дополнительные правила
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+    }]
   }
 };

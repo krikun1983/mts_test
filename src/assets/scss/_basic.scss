@@ -1,5 +1,17 @@
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: -webkit-linear-gradient(45deg, rgb(98, 215, 221) 8%, rgb(234, 59, 240));
+  background: -moz-linear-gradient(45deg, rgb(98, 215, 221) 8%, rgb(234, 59, 240));
+  background: linear-gradient(45deg, rgb(98, 215, 221) 8%, rgb(234, 59, 240));
+}
+
+html,
+body {
+  height: 100%;
 }
 
 * {

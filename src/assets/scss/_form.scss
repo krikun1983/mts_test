@@ -1,0 +1,79 @@
+.form {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px 40px;
+
+  .form__email_label,
+  .form__password_label {
+    display: block;
+    margin-bottom: 10px;
+    color: $color-purple-dark;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  input {
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    background-color: $color-gray-light;
+    border: none;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 2px 2px 3px 0 rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 2px 2px 3px 0 rgba(34, 60, 80, 0.2) inset;
+  }
+
+  input:focus {
+    border: 1px solid $color-purple;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 100%;
+    height: 46px;
+    margin-top: 30px;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: $color-purple-dark;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-purple;
+    }
+
+    &:active {
+      background-color: $color-purple;
+      opacity: 0.7;
+    }
+  }
+
+  .form__password_label {
+    position: relative;
+  }
+
+  .password_icon.icon-close {
+    position: absolute;
+    top: 32px;
+    right: 14px;
+    width: 28px;
+    height: 26px;
+    background-image: url('../img/form/eye_hidden_icon.svg');
+    background-repeat: no-repeat;
+  }
+
+  .password_icon.icon-show {
+    position: absolute;
+    top: 32px;
+    right: 14px;
+    width: 28px;
+    height: 26px;
+    background-image: url('../img/form/eye_show_icon.svg');
+    background-repeat: no-repeat;
+  }
+}

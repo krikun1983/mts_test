@@ -1,0 +1,15 @@
+//COLORS
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #929292;
+$color-gray-light: #f7f7f7;
+$color-purple: #ea3bf0;
+$color-purple-dark: #573b7a;
+$color-turquoise: #62d7dd;
+
+//MIXINS
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
