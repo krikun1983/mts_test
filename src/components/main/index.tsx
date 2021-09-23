@@ -1,12 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import uuid from 'react-uuid';
 import { Path } from '../../constants/pages';
 import Account from '../../pages/AccountPage';
 import Dashboard from '../../pages/DashboardPage';
 import Devices from '../../pages/DevicesPage';
 import LoginPage from '../../pages/LoginPage';
 import Settings from '../../pages/SettingsPage';
+import routesConfig from '../../routes/routesConfig';
 import useTypeSelector from '../../store/hooks/useTypeSelector';
+import Routing from '../../types/routing';
 import Sidebar from '../sidebar';
 
 const Main = (): JSX.Element => {
@@ -21,10 +24,9 @@ const Main = (): JSX.Element => {
           <Sidebar />
           <div className="main__content">
             <Switch>
-              <Route exact path={Path.dashboard} component={Dashboard} />
-              <Route exact path={Path.devices} component={Devices} />
-              <Route exact path={Path.account} component={Account} />
-              <Route exact path={Path.settings} component={Settings} />
+              {routesConfig.map((route: Routing): JSX.Element => {
+                return <Route key={uuid()} path={route.path} exact={route.exact} component={route.component} />;
+              })}
             </Switch>
           </div>
         </div>
