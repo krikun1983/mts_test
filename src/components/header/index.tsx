@@ -19,7 +19,9 @@ const Header = (): JSX.Element => {
   return (
     <header className={`header ${!isAdminShow && 'header-show'}`}>
       <div className="logo">
-        <img className="logo__img" src={logo} alt="mts logo" title="mts logo" />
+        <Link to="/">
+          <img className="logo__img" src={logo} alt="mts logo" title="mts logo" />
+        </Link>
         <h1 className="heading">МТС - быть лучше каждый день</h1>
       </div>
       <h2 className="admin__heading">Welcome to the admin panel! 😊</h2>
@@ -42,6 +44,11 @@ const Header = (): JSX.Element => {
           </li>
         </ul>
       </nav>
+      <div
+        className={`menu-close ${isMenuShow ? '' : 'hidden'}`}
+        onClick={(): void => setMenuShow(!isMenuShow)}
+        role="presentation"
+      />
     </header>
   );
 };
