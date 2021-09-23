@@ -1,0 +1,104 @@
+.dashboard-widgets {
+  padding-top: 20px;
+  @include flex-between;
+
+  div {
+    height: 100%;
+    margin-top: -50px;
+    color: $color-purple-light;
+    font-size: 96px;
+    @include flex-center;
+  }
+
+  .widget__up {
+    background-color: $color-valid;
+  }
+
+  .widget__down {
+    color: $color-purple-dark;
+    background-color: $color-invalid;
+  }
+}
+
+.dashboard-widget {
+  width: 260px;
+  height: 430px;
+  background-color: $color-purple-dark;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+
+  figcaption {
+    height: 20%;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+    background-color: $color-purple-light;
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    @include flex-center;
+  }
+}
+
+.dashboard-recent-events {
+  margin-top: 20px;
+  padding: 20px 30px;
+  background-color: $color-purple-light-tr;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+
+  table {
+    display: block;
+    line-height: 1.1;
+    background-color: $color-turquoise;
+    border-collapse: collapse;
+  }
+
+  caption {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    color: $color-white;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: $color-purple-light;
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  }
+
+  th {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a9e2cc;
+  }
+
+  tr th:first-child {
+    width: 50%;
+  }
+
+  tr th:last-child {
+    min-width: 200px;
+  }
+
+  td {
+    padding: 6px 7px;
+    font-size: 0.8em;
+    border: 1px solid #a9e2cc;
+  }
+}
+
+.status {
+  &__up {
+    color: $color-white;
+    background-color: $color-valid;
+  }
+  &__down {
+    background-color: $color-invalid;
+  }
+}
