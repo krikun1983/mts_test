@@ -2,6 +2,7 @@ import { Path } from '../constants/pages';
 import Account from '../pages/AccountPage';
 import Dashboard from '../pages/DashboardPage';
 import Devices from '../pages/DevicesPage';
+import NotFoundPage from '../pages/NotFoundPage';
 import Settings from '../pages/SettingsPage';
 
 const routesConfig = [
@@ -24,6 +25,11 @@ const routesConfig = [
     path: `${Path.settings}`,
     exact: true,
     component: Settings,
+  },
+  {
+    path: '*',
+    exact: false,
+    component: NotFoundPage,
   },
 ];
 

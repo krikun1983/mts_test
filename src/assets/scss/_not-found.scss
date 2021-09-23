@@ -1,0 +1,26 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-right: calc((1920px - 340px - 450px) / 3.6);
+  color: $color-white;
+
+  &__img {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 10px;
+    color: $color-purple;
+    font-weight: bold;
+    font-size: 1.4em;
+
+    span {
+      color: $color-white;
+      font-size: 1.8em;
+    }
+  }
+}
