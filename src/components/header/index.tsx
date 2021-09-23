@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import useTypeSelector from '../../store/hooks/useTypeSelector';
 import logo from '../../assets/img/logo-mts.jpg';
-import { headerMenu, pathHeaderMenu } from '../../constants/pages';
+import { headerMenu, Path, pathHeaderMenu } from '../../constants/pages';
 import { adminShowClose } from '../../store/reducers/adminShowReducer';
 
 const Header = (): JSX.Element => {
@@ -19,7 +19,7 @@ const Header = (): JSX.Element => {
   return (
     <header className={`header ${!isAdminShow && 'header-show'}`}>
       <div className="logo">
-        <Link to="/">
+        <Link to={Path.main}>
           <img className="logo__img" src={logo} alt="mts logo" title="mts logo" />
         </Link>
         <h1 className="heading">МТС - быть лучше каждый день</h1>
