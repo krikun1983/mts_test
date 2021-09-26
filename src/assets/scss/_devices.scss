@@ -1,0 +1,22 @@
+.devices {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+
+  &__link {
+    padding: 10px 25px;
+    color: $color-white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $color-purple;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  }
+
+  &__link:hover {
+    background-color: $color-purple-light;
+  }
+}

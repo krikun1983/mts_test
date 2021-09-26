@@ -5,8 +5,11 @@
 @import 'sidebar';
 @import 'page-login';
 @import 'form';
+@import 'form-search';
 @import 'dashboard';
+@import 'devices';
 @import 'not-found';
+@import 'table-flexbox';
 
 #root {
   position: relative;

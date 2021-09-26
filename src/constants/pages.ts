@@ -4,6 +4,7 @@ export enum Path {
   settings = '/settings',
   dashboard = '/dashboard',
   devices = '/devices',
+  devicesAdd = '/devices/add',
 }
 
 export const pathHeaderMenu = [Path.account, Path.settings];

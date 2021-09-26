@@ -1,0 +1,36 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 960px;
+  margin-right: 50px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.table-flexbox {
+  width: 960px;
+  height: 550px;
+  overflow: auto;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.block .title {
+  color: $color-white;
+  font-weight: bold;
+  background-color: $color-purple-dark;
+}
+
+.block div {
+  width: 25%;
+  padding: 5px 0;
+  text-align: center;
+  border: 1px solid $color-purple-dark;
+}

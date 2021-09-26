@@ -1,6 +1,7 @@
 import { Path } from '../constants/pages';
 import Account from '../pages/AccountPage';
 import Dashboard from '../pages/DashboardPage';
+import DevicesAddPage from '../pages/DevicesAddPage';
 import Devices from '../pages/DevicesPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import Settings from '../pages/SettingsPage';
@@ -15,6 +16,11 @@ const routesConfig = [
     path: `${Path.devices}`,
     exact: true,
     component: Devices,
+  },
+  {
+    path: `${Path.devicesAdd}`,
+    exact: true,
+    component: DevicesAddPage,
   },
   {
     path: `${Path.account}`,
