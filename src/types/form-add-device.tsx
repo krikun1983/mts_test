@@ -5,6 +5,8 @@ export type FormAddDevice = {
   location: string;
   coordinates: string;
   textarea: string;
+  status?: string;
+  date: string;
 };
 
 export type FormAddDevicesState = {

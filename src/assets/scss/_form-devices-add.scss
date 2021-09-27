@@ -58,6 +58,12 @@
     }
   }
 
+  &__select {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   &__table {
     width: 960px;
     height: 260px;

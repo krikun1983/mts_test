@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'react-uuid';
 import useTypeSelector from '../../store/hooks/useTypeSelector';
 
 const Dashboard = (): JSX.Element => {
@@ -12,11 +13,11 @@ const Dashboard = (): JSX.Element => {
         </figure>
         <figure className="dashboard-widget widget__up">
           <figcaption>UP</figcaption>
-          <div>2</div>
+          <div>{formAddDevices.filter(item => item.status === 'up').length}</div>
         </figure>
         <figure className="dashboard-widget widget__down">
           <figcaption>DOWN</figcaption>
-          <div>3</div>
+          <div>{formAddDevices.filter(item => item.status === 'down').length}</div>
         </figure>
       </div>
       <div className="dashboard-recent-events">
@@ -30,31 +31,15 @@ const Dashboard = (): JSX.Element => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Router</td>
-              <td>15.02.21</td>
-              <td className="status__up">UP</td>
-            </tr>
-            <tr>
-              <td>Switch</td>
-              <td>15.02.21</td>
-              <td className="status__up">UP</td>
-            </tr>
-            <tr>
-              <td>Server</td>
-              <td>15.02.21</td>
-              <td className="status__down">DOWN</td>
-            </tr>
-            <tr>
-              <td>Virtual router</td>
-              <td>15.02.21</td>
-              <td className="status__down">DOWN</td>
-            </tr>
-            <tr>
-              <td>Router</td>
-              <td>15.02.21</td>
-              <td className="status__down">DOWN</td>
-            </tr>
+            {formAddDevices.slice(Math.max(formAddDevices.length - 5, 1)).map(({ type, date, status }) => {
+              return (
+                <tr key={uuid()}>
+                  <td>{type}</td>
+                  <td>{date}</td>
+                  <td className={status === 'up' ? 'status__up' : 'status__down'}>{status}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

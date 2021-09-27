@@ -11,6 +11,8 @@ const FormDevices = (): JSX.Element => {
   const [location, setLocation] = useState('');
   const [coordinates, setCoordinates] = useState('');
   const [textarea, setTextarea] = useState('');
+  const [status, setStatus] = useState('up');
+  const date = new Date().toLocaleDateString();
 
   const reset = (): void => {
     setName('');
@@ -23,7 +25,7 @@ const FormDevices = (): JSX.Element => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(formAddDevicesAction({ name, ipAddress, type, location, coordinates, textarea }));
+    dispatch(formAddDevicesAction({ name, ipAddress, type, status, location, coordinates, textarea, date }));
     reset();
   };
 
@@ -39,15 +41,24 @@ const FormDevices = (): JSX.Element => {
           IP-address:
         </label>
         <input type="text" id="ipAddress" value={ipAddress} onChange={(e): void => setIpAddress(e.target.value)} />
-        <label className="form-devices__type" htmlFor="type">
-          Type:
-        </label>
-        <select id="type" value={type} onChange={(e): void => setType(e.target.value)}>
-          <option value="Router">Router</option>
-          <option value="Virtual router">Virtual router</option>
-          <option value="Switch">Switch</option>
-          <option value="Server">Server</option>
-        </select>
+        <div className="form-devices__select">
+          <label className="form-devices__type" htmlFor="type">
+            Type:
+            <select id="type" value={type} onChange={(e): void => setType(e.target.value)}>
+              <option value="Router">Router</option>
+              <option value="Virtual router">Virtual router</option>
+              <option value="Switch">Switch</option>
+              <option value="Server">Server</option>
+            </select>
+          </label>
+          <label className="form-devices__status" htmlFor="status">
+            Status:
+            <select id="type" value={type} onChange={(e): void => setStatus(e.target.value)}>
+              <option value="up">UP</option>
+              <option value="down">DOWN</option>
+            </select>
+          </label>
+        </div>
         <label className="form-devices__location" htmlFor="location">
           Location:
         </label>
