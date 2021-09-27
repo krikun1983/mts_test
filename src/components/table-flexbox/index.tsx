@@ -6,7 +6,6 @@ const TableFlexbox = (): JSX.Element => {
   const { formAddDevices } = useTypeSelector(state => state.formAddDevices);
   const { nameSearch } = useTypeSelector(state => state.nameSearch);
   const { ipAddressSearch } = useTypeSelector(state => state.ipAddressSearch);
-  console.log(nameSearch, ipAddressSearch);
 
   return (
     <>
@@ -20,18 +19,18 @@ const TableFlexbox = (): JSX.Element => {
             <div className="block_text title">UP/DOWN</div>
           </div>
           {formAddDevices
-            .filter(item => nameSearch ? item.name === nameSearch : item.name)
-            .filter(item => ipAddressSearch ? item.ipAddress === ipAddressSearch : item.ipAddress)
+            .filter(item => (nameSearch ? item.name === nameSearch : item.name))
+            .filter(item => (ipAddressSearch ? item.ipAddress === ipAddressSearch : item.ipAddress))
             .map(({ name, ipAddress, location, status }) => {
-            return (
-              <div className="block" key={uuid()}>
-                <div className="block_text">{name}</div>
-                <div className="block_text">{ipAddress}</div>
-                <div className="block_text">{location}</div>
-                <div className="block_text">{status}</div>
-              </div>
-            );
-          })}
+              return (
+                <div className="block" key={uuid()}>
+                  <div className="block_text">{name}</div>
+                  <div className="block_text">{ipAddress}</div>
+                  <div className="block_text">{location}</div>
+                  <div className="block_text">{status}</div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
