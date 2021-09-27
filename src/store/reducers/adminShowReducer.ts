@@ -1,7 +1,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
-  isAdminShow: true,
+  isAdminShow: false,
 };
 
 export const adminShowOpen = createAction('AdminShowOpen');

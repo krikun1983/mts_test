@@ -4,6 +4,10 @@ import useTypeSelector from '../../store/hooks/useTypeSelector';
 
 const TableFlexbox = (): JSX.Element => {
   const { formAddDevices } = useTypeSelector(state => state.formAddDevices);
+  const { nameSearch } = useTypeSelector(state => state.nameSearch);
+  const { ipAddressSearch } = useTypeSelector(state => state.ipAddressSearch);
+  console.log(nameSearch, ipAddressSearch);
+
   return (
     <>
       <div className="table-container">
@@ -15,7 +19,10 @@ const TableFlexbox = (): JSX.Element => {
             <div className="block_text title">Location (address)</div>
             <div className="block_text title">UP/DOWN</div>
           </div>
-          {formAddDevices.map(({ name, ipAddress, location, status }) => {
+          {formAddDevices
+            .filter(item => nameSearch ? item.name === nameSearch : item.name)
+            .filter(item => ipAddressSearch ? item.ipAddress === ipAddressSearch : item.ipAddress)
+            .map(({ name, ipAddress, location, status }) => {
             return (
               <div className="block" key={uuid()}>
                 <div className="block_text">{name}</div>
