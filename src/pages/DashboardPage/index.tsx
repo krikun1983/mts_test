@@ -1,12 +1,14 @@
 import React from 'react';
+import useTypeSelector from '../../store/hooks/useTypeSelector';
 
 const Dashboard = (): JSX.Element => {
+  const { formAddDevices } = useTypeSelector(state => state.formAddDevices);
   return (
     <>
       <div className="dashboard-widgets">
         <figure className="dashboard-widget widget__devices">
           <figcaption>Devices</figcaption>
-          <div>1</div>
+          <div>{formAddDevices.length}</div>
         </figure>
         <figure className="dashboard-widget widget__up">
           <figcaption>UP</figcaption>

@@ -3,10 +3,16 @@ import Account from '../pages/AccountPage';
 import Dashboard from '../pages/DashboardPage';
 import DevicesAddPage from '../pages/DevicesAddPage';
 import Devices from '../pages/DevicesPage';
+import FirstPage from '../pages/FirstPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import Settings from '../pages/SettingsPage';
 
 const routesConfig = [
+  {
+    path: `${Path.main}`,
+    exact: true,
+    component: FirstPage,
+  },
   {
     path: `${Path.dashboard}`,
     exact: true,
